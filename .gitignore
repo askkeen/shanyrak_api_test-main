@@ -1,0 +1,6 @@
+# .env.test
+node_modules/
+package-lock.json
+# test/spec/log.txt
+# allure-results/
+# allure-report/

@@ -1,0 +1,23 @@
+stages:
+  - test
+
+test:
+  image: php:8.0-fpm-alpine
+  stage: test
+  before_script:
+    - apk update && apk add git php8-gd libzip-dev php8-zip php8-zlib libpng-dev php8-pdo php8-pdo_mysql nodejs npm openjdk11
+    - docker-php-ext-install gd
+    - docker-php-ext-install pdo pdo_mysql
+    - docker-php-ext-enable pdo_mysql
+    - docker-php-ext-install zip
+    - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+    - npm install
+  script:
+    - npm test
+  when: always
+  artifacts:
+    when: always
+    paths:
+      - allure-results
+      - allure-report
+    expire_in: 1 month

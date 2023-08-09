@@ -1,0 +1,17 @@
+{
+  "devDependencies": {
+      "allure-commandline": "^2.23.1",
+      "allure-mocha": "^2.4.0",
+      "axios": "^1.4.0",
+      "chai": "^4.3.7",
+      "chai-json-schema": "^1.5.1",
+      "chai-subset": "^1.6.0",
+      "dotenv": "^16.3.1",
+      "mocha": "^10.2.0",
+      "moment": "^2.29.4"
+      
+  },
+  "scripts": {
+    "test": "mocha test/spec/test.js --timeout 20000 --reporter allure-mocha"
+  }
+}

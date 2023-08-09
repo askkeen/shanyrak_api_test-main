@@ -1,0 +1,6 @@
+2023-08-08 18:39:08 [inf]   set base API URI: http://localhost:8000
+2023-08-08 18:39:08 [req] ▶ post {"login":"online","password":"online21@CK!"} to api/login:
+2023-08-08 18:39:08 [res]   status code: 200
+2023-08-08 18:39:08 [inf]   login as online
+2023-08-08 18:39:08 [req] ▶ get from api/auth/test-users:
+2023-08-08 18:39:09 [res]   status code: 200

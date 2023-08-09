@@ -1,0 +1,101 @@
+{
+    "title": "get-premium response schema",
+    "type": "object",
+    "required": ["success", "message", "data"],
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "message": {
+        "type": "string"
+      },
+      "data": {
+        "type": "object",
+        "required": ["premium_list"],
+        "properties": {
+          "premium_list": {
+            "type": "object",
+            "required": ["client", "total", "matrix"],
+            "properties": {
+              "client": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["external_id", "premium", "premium_rate", "exchange_rate", "amount_sum", "amount_cur", "age"],
+                  "properties": {
+                    "external_id": {
+                      "type": "string"
+                    },
+                    "premium": {
+                      "type": "integer"
+                    },
+                    "premium_rate": {
+                      "type": "number"
+                    },
+                    "exchange_rate": {
+                      "type": "number"
+                    },
+                    "amount_sum": {
+                      "type": "string"
+                    },
+                    "amount_cur": {
+                      "type": "string"
+                    },
+                    "age": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              },
+              "total": {
+                "type": "object",
+                "required": ["premium", "premium_rate", "exchange_rate", "amount_cur", "days"],
+                "properties": {
+                  "premium": {
+                    "type": "integer"
+                  },
+                  "premium_rate": {
+                    "type": "number"
+                  },
+                  "exchange_rate": {
+                    "type": "number"
+                  },
+                  "amount_cur": {
+                    "type": "string"
+                  },
+                  "days": {
+                    "type": "string"
+                  }
+                }
+              },
+              "matrix": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["agent_commission", "brutto_agent_commission", "premium_rate", "premium", "sum_agent_commission"],
+                  "properties": {
+                    "agent_commission": {
+                      "type": "number"
+                    },
+                    "brutto_agent_commission": {
+                      "type": "number"
+                    },
+                    "premium_rate": {
+                      "type": "number"
+                    },
+                    "premium": {
+                      "type": "integer"
+                    },
+                    "sum_agent_commission": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  

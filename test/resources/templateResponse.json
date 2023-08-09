@@ -1,0 +1,26 @@
+{
+    "set-client": {
+        "messages": "Проверка и сохранения карточки клиентов в ЕСБД успешно пройдена."
+    },
+    "getClient": {
+        "messages": "Информация по клиенту успешно получена."
+    },
+    "getPremium": {
+        "messages": "Премия рассчитана" 
+    },
+    "sendSmsCode": {
+        "message": "Смс успешно отправлен!"
+    },
+    "setCancellationContract": {
+        "messages": "Полис отменен.",
+        "data": {
+            "status": 6
+        }
+    },
+    "setPolicy": {
+        "message": "Выписка по полису успешно получена! Email успешно отправлен! ",
+        "data": {
+            "status": 8
+        }
+    }
+}

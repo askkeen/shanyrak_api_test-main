@@ -1,0 +1,8 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Fri Jul 28 13:51:30 ALMT 2023","Fri Jul 28 13:51:31 ALMT 2023","263","Shanyrak API test suite:","","","","","Test get-settings:",""
+"failed","Fri Jul 28 13:51:38 ALMT 2023","Fri Jul 28 13:51:41 ALMT 2023","3532","Shanyrak API test suite:","","","","","Test set-contract-cancellation:",""
+"broken","Tue Aug 08 18:39:09 ALMT 2023","Tue Aug 08 18:39:09 ALMT 2023","1","","","","","","""before all"" hook: beforeAll in ""{root}""",""
+"failed","Fri Jul 28 13:51:35 ALMT 2023","Fri Jul 28 13:51:38 ALMT 2023","2408","Shanyrak API test suite:","","","","","Test set-policy:",""
+"passed","Fri Jul 28 13:51:34 ALMT 2023","Fri Jul 28 13:51:35 ALMT 2023","1446","Shanyrak API test suite:","","","","","Test save:",""
+"passed","Fri Jul 28 13:51:31 ALMT 2023","Fri Jul 28 13:51:33 ALMT 2023","2654","Shanyrak API test suite:","","","","","Test get-client:",""
+"passed","Fri Jul 28 13:51:33 ALMT 2023","Fri Jul 28 13:51:34 ALMT 2023","808","Shanyrak API test suite:","","","","","Test send-verification-code:",""

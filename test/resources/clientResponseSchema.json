@@ -1,0 +1,17 @@
+{
+    "title": "get-client response schema",
+    "type": "object",
+    "required": ["success", "messages", "data"],
+    "properties": {
+        "success": {
+            "type": "boolean"
+        },
+        "messages": {
+            "type": "string"
+        },
+        "data": {
+            "type": "object",
+            "required": ["first_name", "last_name", "born", "document_type_id", "document_number", "document_gived_date"]
+        }
+    }
+}
