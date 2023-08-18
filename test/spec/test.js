@@ -8,8 +8,17 @@ describe('Mst API test suite:', async function () {
     beforeEach(async function () {
         console.log(this.currentTest.title);
         await mstAPI.auth();
-        console.log('aaa')
+        console.log("Success")
     });
+
+    it('Test get-client:', async function () {
+        const response = await mstAPI.getClient();
+        chai.expect(response.status).to.be.equal(200);
+        chai.expect(response.data).to.be.jsonSchema(configManager.getClientResponseSchema());
+        chai.expect(response.data).to.include(configManager.getResponseTemplateData().getClient);
+        chai.expect(response.data.data.iin).to.be.equal(configManager.getGetClientTemplateData().iin);
+    });
+
 
     it('Test get-premium:', async function () {
         const response = await mstAPI.getPremium();
@@ -19,14 +28,7 @@ describe('Mst API test suite:', async function () {
 
     });
 
-    it('Test get-client:', async function () {
-        const response = await mstAPI.getClient();
-        chai.expect(response.status).to.be.equal(200);
-        chai.expect(response.data).to.be.jsonSchema(configManager.getClientResponseSchema());
-        chai.expect(response.data).to.include(configManager.getResponseTemplateData().getClient);
-        chai.expect(response.data.data.iin).to.be.equal(configManager.getSetPolicyTemplateData().customer.iin);
-    });
-
+    
     it('Test send-sms-code:', async function () {
         const response = await mstAPI.sendVerificationCode();
         chai.expect(response.status).to.be.equal(200);

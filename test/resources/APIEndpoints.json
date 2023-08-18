@@ -1,10 +1,10 @@
 {
     "login": "api/login",
     "testUsers": "api/auth/test-users",
-    "getSettings": "api/mst/get-premium",
-    "getClient": "api/mst/get-client",
     "sendVerificationPhone": "api/mst/send-sms-code",
+    "getClient": "api/mst/get-client",
     "setClient": "api/mst/set-client",
+    "getPremium": "api/mst/get-premium",
     "setPolicy": "api/mst/set-policy",
     "setContractCancellation": "api/mst/set-cancellation-contract"
 }

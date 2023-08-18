@@ -7,23 +7,20 @@
     "date_begin": "04.08.2023",
     "date_end": "03.08.2024",
     "insured_days": 180,
-    "trip_country_codes": [
-      "DEU",
-      "SHE"
-    ],
+    "trip_country_codes": ["DEU"],
     "trip_goal": 1,
     "amount_cur": "EUR",
     "covid": 0,
-    "notification_type": 2,
-    "range_id": 2,
     "with_franshize": 0,
     "leisure": 0,
+    "notification_type": 2,
+    "range_id": 2,
     "email": "a.iskakov@a-i.kz",
     "phone": "+7 (707) 854 56 45",
     "with_layout": 1,
     "with_bill": 0,
     "agent_commission": 0,
-    "holders": [
+    "holder": [
       {
         "is_holder": true,
         "amount_sum": "50000",

@@ -13,7 +13,7 @@ class MstAPI extends BaseAPI {
             options.timeout || configManager.getAPIConfigData().APIWaitTime, 
             options.headers || {
                 'Content-Type': 'application/x-www-form-urlencoded',
-            });
+            })
     }
 
     async auth() {
@@ -24,22 +24,14 @@ class MstAPI extends BaseAPI {
         
         let response = await this.post(configManager.getAPIEndpoint().login, params);
         new MstAPI({ log: `[inf]   login as ${params.login}`, headers: { Authorization: `Bearer ${response.data.data.access_token}` } });
-        const user = (await this.get(configManager.getAPIEndpoint().testUsers)).data.filter((elem) => elem.product === 'Mst').pop();
-
-        params = { 
-            login: user.login,
-            password: user.password,
-        }
-        
-        response = await this.post(configManager.getAPIEndpoint().login, params);
-        new MstAPI({ log: `[inf]   login as ${params.login}`, headers: { Authorization: `Bearer ${response.data.data.access_token}` } });
-    }
-
+                }    
+                
+                
     async getClient() {
         const params = { 
-            iin: configManager.getSetPolicyTemplateData().customer.iin,
-            natural_person_bool: configManager.getSetPolicyTemplateData().customer.natural_person_bool,
-            resident_bool: configManager.getSetPolicyTemplateData().customer.resident_bool,
+            iin: configManager.getGetClientTemplateData().iin,
+            natural_person_bool: configManager.getGetClientTemplateData().natural_person_bool,
+            resident_bool: configManager.getGetClientTemplateData().resident_bool,
         }
         
         return await this.get(configManager.getAPIEndpoint().getClient, params);
@@ -57,13 +49,12 @@ class MstAPI extends BaseAPI {
             trip_goal: templateData.trip_goal,
             amount_cur: templateData.amount_cur,
             covid: templateData.covid,
-            without_franshize: templateData.without_franshize,
+            with_franshize: templateData.with_franshize,
             leisure: templateData.leisure,
             get_matrix: templateData.get_matrix,
-            'holders.external_id': templateData.holders[0].external_id,
-            'holders.amount_sum': templateData.holders[0].external_id,
-            'holders.born': templateData.holders[0].external_id,
-            'holders.age': templateData.holders[0].external_id
+            age: templateData.holder.age,
+            // holders[amount_sum]: templateData.holders[0].amount_sum,
+            // holders.born: templateData.holders[0].born,
             };
         
         return await this.get(configManager.getAPIEndpoint().getPremium, params);
