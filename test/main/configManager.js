@@ -1,6 +1,7 @@
 const APIEndpoints = require('../resources/APIEndpoints.json');
 const APIConfigData = require('../resources/APIConfigData.json');
 const setPolicyTemplateData = require('../resources/templateSetPolicy.json');
+const getClientTemplateData = require('../resources/templateGetClient.json');
 const responseTemplateData = require('../resources/templateResponse.json');
 const clientResponseSchema = require('../resources/clientResponseSchema.json');
 const premiumResponseSchema = require('../resources/premiumResponseSchema.json');
@@ -16,6 +17,10 @@ class ConfigManager {
 
     getSetPolicyTemplateData() {
         return JSON.parse(JSON.stringify(setPolicyTemplateData));
+    }
+
+    getGetClientTemplateData() {
+        return JSON.parse(JSON.stringify(getClientTemplateData));
     }
 
     getResponseTemplateData() {
