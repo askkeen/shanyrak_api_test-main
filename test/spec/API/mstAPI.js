@@ -33,7 +33,7 @@ class MstAPI extends BaseAPI {
             natural_person_bool: configManager.getGetClientTemplateData().natural_person_bool,
             resident_bool: configManager.getGetClientTemplateData().resident_bool,
         }
-        
+        console.log(params);
         return await this.get(configManager.getAPIEndpoint().getClient, params);
     }
 
@@ -51,13 +51,18 @@ class MstAPI extends BaseAPI {
             covid: templateData.covid,
             with_franshize: templateData.with_franshize,
             leisure: templateData.leisure,
-            get_matrix: templateData.get_matrix,
-            age: templateData.holder.age,
-            // holders[amount_sum]: templateData.holders[0].amount_sum,
-            // holders.born: templateData.holders[0].born,
-            };
-        
+            holders: [
+                {
+                    external_id: templateData.holders[0].external_id,
+                    amount_sum: templateData.holders[0].amount_sum,
+                    born: templateData.holders[0].born,
+                    age: templateData.holders[0].age
+                }
+            ]
+        };  
+           
         return await this.get(configManager.getAPIEndpoint().getPremium, params);
+      
     }
     
    

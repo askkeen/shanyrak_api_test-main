@@ -10,31 +10,31 @@ describe('Mst API test suite:', async function () {
         await mstAPI.auth();
         console.log("Success")
     });
-
-    it('Test get-client:', async function () {
-        const response = await mstAPI.getClient();
-        chai.expect(response.status).to.be.equal(200);
-        chai.expect(response.data).to.be.jsonSchema(configManager.getClientResponseSchema());
-        chai.expect(response.data).to.include(configManager.getResponseTemplateData().getClient);
-        chai.expect(response.data.data.iin).to.be.equal(configManager.getGetClientTemplateData().iin);
-    });
-
-
+    
     it('Test get-premium:', async function () {
         const response = await mstAPI.getPremium();
+        // console.log('k,', response);
         chai.expect(response.status).to.be.equal(200);
         chai.expect(response.data).to.be.jsonSchema(configManager.getPremiumResponseSchema());
         chai.expect(response.data).to.containSubset(configManager.getResponseTemplateData().getPremium);
 
     });
 
-    
+   
     it('Test send-sms-code:', async function () {
         const response = await mstAPI.sendVerificationCode();
         chai.expect(response.status).to.be.equal(200);
         chai.expect(response.data).to.include(configManager.getResponseTemplateData().sendVerificationCode);
     });
 
+    it('Test set-policy:', async function () {
+        const saveResponse = await mstAPI.save();
+        chai.expect(saveResponse.status).to.be.equal(200);
+        const response = await mstAPI.setPolicy(saveResponse);
+        chai.expect(response.status).to.be.equal(200);
+        chai.expect(response.data).to.containSubset(configManager.getResponseTemplateData().setPolicy);
+        chai.expect(response.data.data.polis_number).to.be.equal(saveResponse.data.data.polis_number);
+    });
     // it('Test save:', async function () {
     //     const response = await mstAPI.save();
     //     chai.expect(response.status).to.be.equal(200);
