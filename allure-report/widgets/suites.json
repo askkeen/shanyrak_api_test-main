@@ -1,1 +1,1 @@
-{"total":2,"items":[{"uid":"397fbbba8b8f60496e6c6d74fb644b45","name":"Shanyrak API test suite:","statistic":{"failed":2,"broken":0,"skipped":0,"passed":4,"unknown":0,"total":6}}]}
+{"total":3,"items":[{"uid":"c07e6d231eb74eed78c1b38d03d15a7e","name":"Mst API test suite:","statistic":{"failed":2,"broken":7,"skipped":0,"passed":1,"unknown":0,"total":10}},{"uid":"397fbbba8b8f60496e6c6d74fb644b45","name":"Shanyrak API test suite:","statistic":{"failed":2,"broken":0,"skipped":0,"passed":4,"unknown":0,"total":6}}]}

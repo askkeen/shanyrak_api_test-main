@@ -1,6 +1,6 @@
 {
   "external_id": "1690886056-930421400841",
-  "agent_id_1c": 618,
+
   "policy_id": "",
   "is_draft": 1,
   "payment_method": 2,
@@ -22,7 +22,7 @@
   "agent_commission": 0,
   "holders": [
     {
-      "is_holder": false,
+      "is_holder": true,
       "amount_sum": "50000",
       "resident_bool": 1,
       "iin": "930421400841",

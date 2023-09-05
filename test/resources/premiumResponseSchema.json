@@ -1,12 +1,8 @@
 {
   "type": "object",
   "properties": {
-    "success": {
-      "type": "boolean"
-    },
-    "message": {
-      "type": "string"
-    },
+    "success": { "type": "boolean" },
+    "message": { "type": "string" },
     "data": {
       "type": "object",
       "properties": {
@@ -18,27 +14,13 @@
               "items": {
                 "type": "object",
                 "properties": {
-                  "external_id": {
-                    "type": "string"
-                  },
-                  "premium": {
-                    "type": "number"
-                  },
-                  "premium_rate": {
-                    "type": "number"
-                  },
-                  "exchange_rate": {
-                    "type": "number"
-                  },
-                  "amount_sum": {
-                    "type": "string"
-                  },
-                  "amount_cur": {
-                    "type": "string"
-                  },
-                  "age": {
-                    "type": "string"
-                  }
+                  "external_id": { "type": "string" },
+                  "premium": { "type": "number" },
+                  "premium_rate": { "type": "number" },
+                  "exchange_rate": { "type": "number" },
+                  "amount_sum": { "type": "string" },
+                  "amount_cur": { "type": "string" },
+                  "age": { "type": ["string", "number"] }
                 },
                 "required": ["external_id", "premium", "premium_rate", "exchange_rate", "amount_sum", "amount_cur", "age"]
               }
@@ -46,27 +28,15 @@
             "total": {
               "type": "object",
               "properties": {
-                "premium": {
-                  "type": "number"
-                },
-                "premium_rate": {
-                  "type": "number"
-                },
-                "exchange_rate": {
-                  "type": "number"
-                },
-                "amount_cur": {
-                  "type": "string"
-                },
-                "days": {
-                  "type": "number"
-                }
+                "premium": { "type": "number" },
+                "premium_rate": { "type": "number" },
+                "exchange_rate": { "type": "number" },
+                "amount_cur": { "type": "string" },
+                "days": { "type": "number" }
               },
               "required": ["premium", "premium_rate", "exchange_rate", "amount_cur", "days"]
             },
-            "matrix": {
-              "type": "array"
-            }
+            "matrix": { "type": "array" }
           },
           "required": ["client", "total", "matrix"]
         }
@@ -76,4 +46,3 @@
   },
   "required": ["success", "message", "data"]
 }
-
